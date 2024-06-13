@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux'
 
 import { setUsername } from './authSlice';
 
+import logo from '../mainHeader/images/vizortek.png';
+
 const { Text, Title } = Typography;
 
 
@@ -21,16 +23,19 @@ export default function Login(){
 			dispatch(setUsername(values.username));
 
 		}
+ 
 
 	}
 
-	
+
 
 	return (
 
 		<Form className="login-form" layout="vertical" name="login_form" onFinish={ onFinish } size="large">
 
 			<Space direction="vertical">
+
+				<img src={ logo } />
 
 				<Title level={ 4 }>Login</Title>
 

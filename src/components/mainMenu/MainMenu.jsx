@@ -27,7 +27,7 @@ export default function MainMenu(){
 
 	return (
 
-		<Menu defaultSelectedKeys={['1']} mode="inline" items={ items } />
+		<Menu defaultSelectedKeys={['3']} mode="inline" items={ items } />
 
 	);
 

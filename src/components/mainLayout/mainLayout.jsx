@@ -2,9 +2,11 @@ import React from 'react';
 import { Layout } from 'antd';
 import { useSelector } from 'react-redux';
 
+import { Login } from '../auth';
 import { MainHeader } from '../mainHeader';
 import { MainMenu } from '../mainMenu';
-import { Login } from '../auth';
+import { WorkAreaLayout } from '../workAreaLayout';
+
 
 const { Header, Content, Sider } = Layout;
 
@@ -50,7 +52,7 @@ export default function MainLayout(){
 
 					{
 						username ?
-						null
+						<WorkAreaLayout />
 						:
 						<Login />
 					}
