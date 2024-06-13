@@ -1,4 +1,4 @@
-####Vizor Studio
+##Vizor Studio
 
 Use yarn to download and install required modules.
 
