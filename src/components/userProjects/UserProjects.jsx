@@ -20,6 +20,7 @@ export default function UserProjects(){
 	if(projects.length === 0){
 
 		setTimeout(() => {
+
 			let projectsCount = Math.ceil(Math.random() * 5);
 
 			for(let i = 0; i < projectsCount; i++){
@@ -30,9 +31,8 @@ export default function UserProjects(){
 				let projectDate = `${ date.getMonth() + 1 }-${ date.getDate() }-${ date.getFullYear() }`;
 				let projectDescription = `Some lines for project description.`;
 
-
-				// tmpProjects.push({ projectName, projectDate, projectDescription });
 				dispatch(setProjects({ projectName, projectDate, projectDescription }));
+				
 			}
 
 			console.log(tmpProjects);
@@ -40,8 +40,6 @@ export default function UserProjects(){
 			
 			
 		}, 500);
-
-		
 
 	}
 
@@ -57,7 +55,7 @@ export default function UserProjects(){
 				<LoadingOutlined fullscreen style={{ fontSize: 48 }} spin />
 				:
 				projects.map((project, j) => 
-					<Card title={ project.projectName } extra={ <Button type="link">Open</Button> } style={{ width: '30rem' }}>
+					<Card key={ `project_${ project.projectName }_${ j }` } title={ project.projectName } extra={ <Button type="link">Open</Button> } style={{ width: '30rem' }}>
 						<Text style={{ fontSize: '1.1rem' }}>{ project.projectDescription }</Text> <br/>
 						<Text>Last accessed on { project.projectDate }</Text>
 					</Card>

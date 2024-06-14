@@ -1,6 +1,6 @@
 # Vizor Studio
 
-Use yarn to download and install required modules.\\
+Use yarn to download and install required modules.\
 
 ## Available Scripts
 

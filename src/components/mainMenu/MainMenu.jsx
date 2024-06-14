@@ -1,33 +1,41 @@
 import React from 'react';
 import { AppstoreOutlined, Html5Outlined, JavaScriptOutlined, PlusOutlined, ProjectOutlined, SettingOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getMenuItem } from '../utils/functions';
+
+import { SETTINGS, NEW_PROJECT, MY_PROJECTS, SAMPLES } from './constants';
+import { setCurrentSelectedOption } from './mainMenuSlice';
 
 
 export default function MainMenu(){
 
-	function getItem(label, key, icon, children) {
+	const dispatch = useDispatch();
 
-		return {
-			key,
-			icon,
-			children,
-			label,
-		};
+	const currentSelectedOption = useSelector(state => state.mainMenu.currentSelectedOption);
+	
+	const items = [
+		getMenuItem('Settings', SETTINGS, <SettingOutlined />),
+		getMenuItem('Create new project', NEW_PROJECT, <PlusOutlined />),
+		// getItem('JS', '2', <JavaScriptOutlined />),
+		getMenuItem('My projects', MY_PROJECTS, <ProjectOutlined />),
+		getMenuItem('Samples', SAMPLES, <AppstoreOutlined />),
+	];
+
+
+	function optionSelected(option){
+
+		const { item, key } = option;
+
+		dispatch(setCurrentSelectedOption(key));
 
 	}
-
-	const items = [
-		getItem('Settings', '1', <SettingOutlined />),
-		getItem('Create new project', '2', <PlusOutlined />),
-		// getItem('JS', '2', <JavaScriptOutlined />),
-		getItem('My projects', '3', <ProjectOutlined />),
-		getItem('Samples', '4', <AppstoreOutlined />),
-	];
 
 
 	return (
 
-		<Menu defaultSelectedKeys={['3']} mode="inline" items={ items } />
+		<Menu defaultSelectedKeys={[ currentSelectedOption ]} mode="inline" items={ items } onClick={ optionSelected } />
 
 	);
 

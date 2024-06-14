@@ -19,6 +19,7 @@ export default function MainLayout(){
 
 		<Layout
 			style={{
+				height: '100vh',
 				minHeight: '100vh',
 			}}
 
@@ -48,7 +49,7 @@ export default function MainLayout(){
 
 
 
-				<Content>
+				<Content style={{ height: '100%' }}>
 
 					{
 						username ?

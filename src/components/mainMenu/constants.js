@@ -1,0 +1,11 @@
+const SETTINGS = 'SETTINGS';
+const NEW_PROJECT = 'NEW_PROJECT';
+const MY_PROJECTS = 'MY_PROJECTS';
+const SAMPLES = 'SAMPLES';
+
+module.exports = {
+	SETTINGS,
+	NEW_PROJECT,
+	MY_PROJECTS,
+	SAMPLES
+}
