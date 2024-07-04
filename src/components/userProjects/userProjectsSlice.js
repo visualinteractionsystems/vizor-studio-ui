@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	currentProjectIndex: null,
+	currentProjectIndex: -1,
 	projects: [ ]
 }
 
@@ -10,12 +10,12 @@ export const userProjectsSlice = createSlice({
 	name: 'userProjects',
 	initialState,
 	reducers: {
-		setCurrentProjectIndex: (state, action) => state.currentProjectIndex = action.payload,
+		setCurrentProjectIndex: (state, action) => void(state.currentProjectIndex = action.payload),
 		setProjects: (state, action) => void(state.projects.push(action.payload))
 	}
 });
 
 
-export const { setProjects } = userProjectsSlice.actions;
+export const { setCurrentProjectIndex, setProjects } = userProjectsSlice.actions;
 
 export default userProjectsSlice.reducer;

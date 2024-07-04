@@ -4,6 +4,9 @@ import { useSelector } from 'react-redux';
 
 import { SETTINGS, NEW_PROJECT, MY_PROJECTS, SAMPLES } from '../mainMenu/constants';
 import { UserProjects } from '../userProjects';
+import { UserProjectTemplate } from '../userProjectTemplate';
+import { UserSettings } from '../userSettings';
+
 import { WORKING_SCREEN } from './constants';
 
 const { Content, Sider } = Layout;
@@ -21,7 +24,10 @@ export default function WorkAreaLayout(){
 		switch(currentSelectedOption){
 
 			case MY_PROJECTS:
-				return <UserProjects />
+				return <UserProjects />;
+
+			case SETTINGS:
+				return <UserSettings />
 
 			default:
 				return null;

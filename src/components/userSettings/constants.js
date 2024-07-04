@@ -1,0 +1,9 @@
+const SOURCE_TYPES = {
+	RELATIONAL_DATABASE: 0,
+	NON_RELATIONAL_DATABASE: 1,
+	FILE: 2
+};
+
+module.exports = {
+	SOURCE_TYPES
+}
